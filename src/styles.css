@@ -64,6 +64,11 @@ main {
     grid-template-columns: 1fr 4fr;
 }
 
+header,main,footer {
+    z-index: 1;
+}
+
+
 #to-dos {
     background-color:white;
     display:flex;
@@ -72,13 +77,14 @@ main {
 }
 
 #to-dos-container {
-    height:85%;
-    width:85%;
-    /* border:1px solid black; */
+    height:100%;
+    width:100%;
+    border:1px solid black;
     padding:40px;
     font-size:1.5rem;
     display:flex;
     flex-direction: column;
+    background-color: white;
 }
 
 #top-panel {
@@ -87,9 +93,9 @@ main {
     text-decoration: underline;
 }
 
-#to-dos-list {
+/* #to-dos-list {
 
-}
+} */
 
 .task {
     height:40px;
@@ -105,6 +111,7 @@ main {
     height:100vh;
     width:100vw;
     background: rgba(0, 0, 0, 0.5);
-    z-index: 1;
+    z-index: 2;
+    display:block;
+    position:fixed;
 }
-
