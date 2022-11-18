@@ -7,49 +7,52 @@
     <script src="main.js" defer></script>
     <title>Mike T's To-do list</title>
 </head>
-<body>
-    <header>
-        <div></div>
-        <div>To-do's</div>
-        <div></div>
-    </header>
-    <main>
-        <div class="panel" id="side-bar-container">
-            <div id="side-bar">
-                <div class="side-bar-button">Home</div>
-                <div class="side-bar-button">Today</div>
-                <div class="side-bar-button">This Week</div>
-                <div class="side-bar-button">
-                    Projects
-                    <div id="projects-container">
-                        <div class="project">Chores</div>
+<body id="body">
+    <div id="container">
+        <header>
+            <div></div>
+            <div>To-do's</div>
+            <div></div>
+        </header>
+        <main>
+            <div class="panel" id="side-bar-container">
+                <div id="side-bar">
+                    <div class="side-bar-button">Home</div>
+                    <div class="side-bar-button">Today</div>
+                    <div class="side-bar-button">This Week</div>
+                    <div class="side-bar-button">
+                        Projects
+                        <div id="projects-container">
+                            <div class="project">Chores</div>
+                        </div>
+                    </div>
+                </div>
+    
+                <div id="add-task-container">
+                    <button id="add-task-button">+</button>
+                </div>
+    
+            </div>
+            <div class="panel" id="to-dos">
+                <div id="to-dos-container">
+                    <div id="top-panel">
+                        <p>Tasks</p>
+                        <p>Due</p>
+                    </div>
+                    <div id="to-dos-list">
+                        <!-- <div class="task">
+                            
+                        </div> -->
                     </div>
                 </div>
             </div>
-
-            <div id="add-task-button">
-                <button>+</button>
+        </main>
+        <footer>
+            <div>
+    
             </div>
-
-        </div>
-        <div class="panel" id="to-dos">
-            <div id="to-dos-container">
-                <div id="top-panel">
-                    <p>Tasks</p>
-                    <p>Due</p>
-                </div>
-                <div id="to-dos-list">
-                    <!-- <div class="task">
-                        
-                    </div> -->
-                </div>
-            </div>
-        </div>
-    </main>
-    <footer>
-        <div>
-
-        </div>
-    </footer>
+        </footer>
+    </div>
+    
 </body>
 </html>

@@ -1,11 +1,14 @@
 import domElements from './domElements'
 
-const Task = () => {
-    
-console.log(domElements)
 
-return Task
-}
+console.log(domElements())
+// const Task = () => {
+    
+//     // let taskButton = domElements.createTaskButton()
+//     console.log(domElements.createTaskButton)
+
+// return Task
+// }
 
 export default Task
 

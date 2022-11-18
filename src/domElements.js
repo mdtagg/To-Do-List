@@ -1,14 +1,21 @@
 
 const domElements = () => {
-    
-    const createTaskButton = () => {
+    const taskButton = document.getElementById('add-task-button')
 
-        const taskButton = document.getElementById('add-task-button')
-        taskButton.addEventListener('click', )
-        return taskButton
-    } 
+    const taskPopUp = () => {
+        const taskPopUp = document.createElement('div')
+        taskPopUp.classList.add('taskModal')
+        body.appendChild(taskPopUp)
+    }
 
-    return createTaskButton
+    taskButton.addEventListener('click', taskPopUp)
+    // console.log(taskButton)
+    // const createTaskButton = () => {
+    //     taskButton.addEventListener('click', taskPopUp)
+    //     return taskButton
+    // } 
+
+    return { taskPopUp }
 }
 
 export default domElements

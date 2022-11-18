@@ -46,12 +46,12 @@ header {
     font-size:1.5rem;
 }
 
-#add-task-button {
+#add-task-container {
     display:flex;
     padding:0px 0px 50px 40px;
 }
 
-#add-task-button button {
+#add-task-container button {
     height:70px;
     width:100px;
     border-radius:10%;
@@ -99,5 +99,12 @@ main {
     display:flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.taskModal {
+    height:100vh;
+    width:100vw;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
 }
 
