@@ -1,10 +1,20 @@
 
+   
+   
 
 const taskPopUp = () => {
-    const body = document.getElementById('body')
-    const PopUp = document.createElement('div')
-    PopUp.classList.add('taskModal')
-    body.appendChild(PopUp)
-    }
+    const task = document.getElementById('taskModal')
+    task.style.display = 'flex'
+    const form = document.createElement('div')
+    form.classList.add('taskForm')
+    task.appendChild(form)
+    return task
+}
 
 export default taskPopUp
+        
+       
+
+
+
+

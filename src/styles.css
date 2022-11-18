@@ -64,9 +64,6 @@ main {
     grid-template-columns: 1fr 4fr;
 }
 
-header,main,footer {
-    z-index: 1;
-}
 
 
 #to-dos {
@@ -79,7 +76,7 @@ header,main,footer {
 #to-dos-container {
     height:100%;
     width:100%;
-    border:1px solid black;
+    /* border:1px solid black; */
     padding:40px;
     font-size:1.5rem;
     display:flex;
@@ -93,9 +90,6 @@ header,main,footer {
     text-decoration: underline;
 }
 
-/* #to-dos-list {
-
-} */
 
 .task {
     height:40px;
@@ -107,11 +101,29 @@ header,main,footer {
     align-items: center;
 }
 
-.taskModal {
+#container {
     height:100vh;
     width:100vw;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 2;
-    display:block;
+    display:flex;
+    flex-direction: column;
+    z-index: 0;
     position:fixed;
+}
+
+#taskModal {
+    height:100vh;
+    width:100vw;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+    backdrop-filter: blur(4px);
+    position:absolute;
+    align-items: center;
+    justify-content: center;
+}
+
+.taskForm {
+    height:60%;
+    width:70%;
+    background-color: white;
+    box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.5);
 }
