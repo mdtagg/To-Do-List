@@ -22,8 +22,11 @@ const taskPopUp = () => {
 
     const taskDetails = elementCreator('div', 'taskDetails')
     taskContainer.elementNode.appendChild(taskDetails.elementNode)
+    const taskDetailsNode = taskDetails.elementNode
+
+    taskDetailsNode.appendChild(createTaskInputs(taskDetailsNode))
     
-    return taskModal
+    return { taskModal,taskDetails }
 }
 
 const elementCreator = (type,id,textContent = '') => {
@@ -44,8 +47,32 @@ const elementCreator = (type,id,textContent = '') => {
     return { elementNode }
 }
 
-const createNew = () => {
+const createTaskInputs = (taskDetailsNode) => {
 
+    const title = document.createElement('textarea')
+    const details = document.createElement('textarea')
+    const dateContainer = document.createElement('div')
+    const dateDue = document.createElement('input')
+    const priorityContainer = document.createElement('div')
+    const priority = document.createElement('input')
+
+    const nodeArray = [
+        title,details,dateContainer,
+        dateDue,priorityContainer,priority,
+        nodeArray
+    ]
+    
+    const createTaskInputsFunction = () => {
+        for(let i = 0;i < nodeArray.length;i++) {
+            taskDetailsNode.appendChild(nodeArray[i])
+        }
+        return taskDetailsNode
+    }
+    // const taskDetails = taskDetailsNode
+
+    return { createTaskInputsFunction }
+    
+    
 }
 
 export default taskPopUp
