@@ -156,6 +156,15 @@ main {
     flex-direction:column;
     padding:20px;
     gap:20px;
+    resize: none;
+}
+
+#details {
+    height:220px;
+}
+
+textarea {
+    resize:none;
 }
 
 #toDoTab {
@@ -166,4 +175,59 @@ main {
 
 #toDoTab:hover {
     text-decoration: underline;
+}
+
+#dateContainer {
+    display:flex;
+}
+
+#priorityContainer {
+    display:flex;
+    align-items: center;
+    gap:10px;
+}
+
+#priorityButtonsContainer {
+    display:flex;
+    gap:10px;
+}
+
+.button {
+    height:20px;
+    width:70px;
+    color:white;
+    border:1px solid black;
+    text-align:center;
+    cursor:pointer;
+    border-radius: 0.25rem;
+}
+
+#priorityButton0 {
+    border:1px solid green;
+    color:green;
+}
+
+#priorityButton0:hover {
+    background-color:green;
+    color:white;
+}
+
+#priorityButton1 {
+    border:1px solid orange;
+    color:orange;
+}
+
+#priorityButton1:hover {
+    background-color:orange;
+    color:white;
+}
+
+#priorityButton2 {
+    border:1px solid red;
+    color:red;
+}
+
+#priorityButton2:hover {
+    background-color:red;
+    color:white;
 }

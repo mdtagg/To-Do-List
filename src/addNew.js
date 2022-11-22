@@ -52,15 +52,36 @@ const createTaskInputs = (taskDetails) => {
     
     let taskDetailsNode = taskDetails
     const title = document.createElement('textarea')
+    title.setAttribute('placeholder','Title')
     const details = document.createElement('textarea')
-    const dateContainer = document.createElement('div')
-    const dateDue = document.createElement('input')
-    const priorityContainer = document.createElement('div')
-    const priority = document.createElement('input')
+    details.setAttribute('placeholder','Details')
+    details.setAttribute('id', 'details')
+    const dateContainer = elementCreator('div','dateContainer').elementNode
+    const dateTitle = elementCreator('div','dateTitle','Date: ')
+    dateContainer.appendChild(dateTitle.elementNode)
+    const dateDue = elementCreator('input','dateDue')
+    dateContainer.appendChild(dateDue.elementNode)
+    dateDue.elementNode.setAttribute('type','date')
+    const priorityContainer = elementCreator('div','priorityContainer').elementNode
+    const priorityTitle = elementCreator('div','priorityTitle','Priority: ')
+    priorityContainer.appendChild(priorityTitle.elementNode)
+    const priorityButtonsContainer = elementCreator('div', 'priorityButtonsContainer').elementNode
+    
+    const createPriorityButtons = (priorityButtonsContainer) => {
+        const buttonOptions = ['Low','Medium','High']
+        for(let i = 0; i < 3;i++) {
+            const priorityButton = elementCreator('div',`priorityButton${i}`).elementNode
+            priorityButton.classList.add('button')
+            priorityButton.textContent = buttonOptions[i]
+            priorityButtonsContainer.appendChild(priorityButton)
+        }
+        priorityContainer.appendChild(priorityButtonsContainer)
+    }
+    createPriorityButtons(priorityButtonsContainer)
 
     const nodeArray = [
         title,details,dateContainer,
-        dateDue,priorityContainer,priority
+        priorityContainer,priorityContainer
     ]
     
     const createTaskInputsFunction = () => {
@@ -75,9 +96,14 @@ const createTaskInputs = (taskDetails) => {
 
 }
 
+const taskPopUpCreator = () => {
+
+}
+
 export default taskPopUp
         
        
+
 
 
 
