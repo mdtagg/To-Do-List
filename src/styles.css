@@ -128,18 +128,26 @@ main {
     box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.5);
 }
 
-#taskHeader {
+#taskHeaderContainer {
     height:10%;
     background-color:red;
-    text-align:start;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
     color:white;
     font-size:30px;
     padding:10px 10px;
 }
 
+#closeTask {
+    font-size:1rem;
+    cursor:pointer;
+}
+
 #taskContainer {
-    display:flex;
     height:90%;
+    display:flex;
+    text-align: center;
 }
 
 #taskSidebar {
@@ -179,6 +187,7 @@ textarea {
 
 #dateContainer {
     display:flex;
+    gap:10px;
 }
 
 #priorityContainer {

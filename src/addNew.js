@@ -8,8 +8,15 @@ const taskPopUp = () => {
     form.classList.add('taskForm')
     taskModal.appendChild(form)
 
+    const taskHeaderContainer = elementCreator('div', 'taskHeaderContainer')
+    form.appendChild(taskHeaderContainer.elementNode)
+
     const taskHeader = elementCreator('div', 'taskHeader','Add New...')
-    form.appendChild(taskHeader.elementNode)
+    taskHeaderContainer.elementNode.appendChild(taskHeader.elementNode)
+
+    const closeTask = elementCreator('div','closeTask','X')
+    closeTask.elementNode.addEventListener('click', closeTask)
+    taskHeaderContainer.elementNode.appendChild(closeTask.elementNode)
 
     const taskContainer = elementCreator('div','taskContainer')
     form.appendChild(taskContainer.elementNode)
@@ -46,7 +53,10 @@ const elementCreator = (type,id,textContent = '') => {
     return { elementNode }
 }
 
-
+const closeTask = () => {
+    const taskModal = document.getElementById('taskModal')
+    taskModal.style.display = 'none'
+}
 
 const createTaskInputs = (taskDetails) => {
     
