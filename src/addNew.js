@@ -29,6 +29,7 @@ const taskPopUp = () => {
     const taskHeaderContainer = elementCreatorTestTest('div','taskHeaderContainer')
     const taskHeader = elementCreatorTestTest('div', 'taskHeader','Add new...')
     const closeTask = elementCreatorTestTest('div','closeTask','X')
+    closeTask.addEventListener('click',closeTask)
     const taskContainer = elementCreatorTestTest('div','taskContainer')
     const taskSideBar = elementCreatorTestTest('div','taskSidebar')
     const taskToDoTab = elementCreatorTestTest('div', 'toDoTab', 'To Do')
