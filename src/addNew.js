@@ -1,56 +1,51 @@
 
+// const elementsObject = () => {
+
+    // const taskModal = document.getElementById('taskModal')
+    // taskModal.style.display = 'flex'
+    // elements.form.classList.add('taskForm')
+
+//     const form = elementCreatorTestTest('div','form')
+//     const taskHeaderContainer = elementCreatorTestTest('div','taskHeaderContainer')
+//     const taskHeader = elementCreatorTestTest('div', 'taskHeader','Add new...')
+//     const closeTask = elementCreatorTestTest('div','closeTask','X')
+//     const taskContainer = elementCreatorTestTest('div','taskContainer')
+//     const taskSideBar = elementCreatorTestTest('div','taskSidebar')
+//     const taskToDoTab = elementCreatorTestTest('div', 'toDoTab', 'To Do')
+//     const taskDetails = elementCreatorTestTest('div', 'taskDetails')
+
+
+
+//     return { form,taskHeaderContainer,taskHeader,closeTask,taskContainer,
+//         taskSideBar,taskToDoTab,taskDetails }
+// }
 
 const taskPopUp = () => {
+
     const taskModal = document.getElementById('taskModal')
     taskModal.style.display = 'flex'
-
-    const form = document.createElement('div')
+    const form = elementCreatorTestTest('div','form')
     form.classList.add('taskForm')
+    const taskHeaderContainer = elementCreatorTestTest('div','taskHeaderContainer')
+    const taskHeader = elementCreatorTestTest('div', 'taskHeader','Add new...')
+    const closeTask = elementCreatorTestTest('div','closeTask','X')
+    const taskContainer = elementCreatorTestTest('div','taskContainer')
+    const taskSideBar = elementCreatorTestTest('div','taskSidebar')
+    const taskToDoTab = elementCreatorTestTest('div', 'toDoTab', 'To Do')
+    const taskDetails = elementCreatorTestTest('div', 'taskDetails')
+
     taskModal.appendChild(form)
+    form.appendChild(taskHeaderContainer)
+    taskHeaderContainer.appendChild(taskHeader)
+    taskHeaderContainer.appendChild(closeTask)
+    form.appendChild(taskContainer)
+    taskContainer.appendChild(taskSideBar)
+    taskSideBar.appendChild(taskToDoTab)
+    taskContainer.appendChild(taskDetails)
 
-    const taskHeaderContainer = elementCreator('div', 'taskHeaderContainer')
-    form.appendChild(taskHeaderContainer.elementNode)
-
-    const taskHeader = elementCreator('div', 'taskHeader','Add New...')
-    taskHeaderContainer.elementNode.appendChild(taskHeader.elementNode)
-
-    const closeTask = elementCreator('div','closeTask','X')
-    closeTask.elementNode.addEventListener('click', closeTask)
-    taskHeaderContainer.elementNode.appendChild(closeTask.elementNode)
-
-    const taskContainer = elementCreator('div','taskContainer')
-    form.appendChild(taskContainer.elementNode)
-
-    const taskSideBar = elementCreator('div','taskSidebar')
-    taskContainer.elementNode.appendChild(taskSideBar.elementNode)
-
-    const taskToDoTab = elementCreator('div', 'toDoTab', 'To Do')
-    taskSideBar.elementNode.appendChild(taskToDoTab.elementNode)
-
-    const taskDetails = elementCreator('div', 'taskDetails')
-    taskContainer.elementNode.appendChild(taskDetails.elementNode)
-
-    createTaskInputs(taskDetails.elementNode)
+    createTaskInputs(taskDetails)
 
     return { taskModal }
-}
-
-const elementCreator = (type,id,textContent = '') => {
-
-    const elementType = type
-    const elementId = id
-    const elementTextContent = textContent
-
-    const createElement = () => {
-        
-        const element = document.createElement(elementType)
-        element.id = elementId
-        element.textContent = elementTextContent
-        return element
-    }
-    const elementNode = createElement()
-
-    return { elementNode }
 }
 
 const closeTask = () => {
@@ -66,21 +61,21 @@ const createTaskInputs = (taskDetails) => {
     const details = document.createElement('textarea')
     details.setAttribute('placeholder','Details')
     details.setAttribute('id', 'details')
-    const dateContainer = elementCreator('div','dateContainer').elementNode
-    const dateTitle = elementCreator('div','dateTitle','Date: ')
+    const dateContainer = elementCreatorTest('div','dateContainer').elementNode
+    const dateTitle = elementCreatorTest('div','dateTitle','Date: ')
     dateContainer.appendChild(dateTitle.elementNode)
-    const dateDue = elementCreator('input','dateDue')
+    const dateDue = elementCreatorTest('input','dateDue')
     dateContainer.appendChild(dateDue.elementNode)
     dateDue.elementNode.setAttribute('type','date')
-    const priorityContainer = elementCreator('div','priorityContainer').elementNode
-    const priorityTitle = elementCreator('div','priorityTitle','Priority: ')
+    const priorityContainer = elementCreatorTest('div','priorityContainer').elementNode
+    const priorityTitle = elementCreatorTest('div','priorityTitle','Priority: ')
     priorityContainer.appendChild(priorityTitle.elementNode)
-    const priorityButtonsContainer = elementCreator('div', 'priorityButtonsContainer').elementNode
+    const priorityButtonsContainer = elementCreatorTest('div', 'priorityButtonsContainer').elementNode
     
     const createPriorityButtons = (priorityButtonsContainer) => {
         const buttonOptions = ['Low','Medium','High']
         for(let i = 0; i < 3;i++) {
-            const priorityButton = elementCreator('div',`priorityButton${i}`).elementNode
+            const priorityButton = elementCreatorTest('div',`priorityButton${i}`).elementNode
             priorityButton.classList.add('button')
             priorityButton.textContent = buttonOptions[i]
             priorityButtonsContainer.appendChild(priorityButton)
@@ -104,6 +99,14 @@ const createTaskInputs = (taskDetails) => {
 
     return { taskDetailsNode }
 
+}
+
+const elementCreatorTestTest = (type,id,textContent) => {
+    
+    const element = document.createElement(type)
+    element.id = id
+    element.textContent = textContent
+    return element 
 }
 
 const taskPopUpCreator = () => {
