@@ -8,7 +8,6 @@ const taskPopUp = () => {
     const taskHeaderContainer = elementCreator('div','taskHeaderContainer')
     const taskHeader = elementCreator('div', 'taskHeader','Add new...')
     const closeTask = elementCreator('div','closeTask','X')
-    closeTask.addEventListener('click',closeTask)
     const taskContainer = elementCreator('div','taskContainer')
     const taskSideBar = elementCreator('div','taskSidebar')
     const taskToDoTab = elementCreator('div', 'toDoTab', 'To Do')
@@ -25,12 +24,13 @@ const taskPopUp = () => {
 
     createTaskInputs(taskDetails)
 
-    return { taskModal }
-}
+    const close = () => {
+        taskModal.style.display = 'none'
+    }
 
-const closeTask = () => {
-    const taskModal = document.getElementById('taskModal')
-    taskModal.style.display = 'none'
+    closeTask.addEventListener('click',close)
+    
+    return { taskModal }
 }
 
 const createTaskInputs = (taskDetails) => {
@@ -74,7 +74,6 @@ const createTaskInputs = (taskDetails) => {
     taskDetails.appendChild(priorityButtonsContainer)
 
     return { taskDetails }
-
 }
 
 const elementCreator = (type,id,textContent) => {
@@ -83,10 +82,6 @@ const elementCreator = (type,id,textContent) => {
     element.id = id
     element.textContent = textContent
     return element 
-}
-
-const taskPopUpCreator = () => {
-
 }
 
 export default taskPopUp
